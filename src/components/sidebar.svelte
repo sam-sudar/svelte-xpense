@@ -1,37 +1,27 @@
 <script>
-  import { Router, Link, Route } from "svelte-routing";
-  import IncomeForm from "../pages/income-form.svelte";
-  import ExpenseForm from "../pages/expense-form.svelte";
+  // import IncomeForm from "../Income_Page/IncomeForm.svelte";
+
+  // import ExpenseForm from "../Expense_Page/ExpenseForm.svelte";
 </script>
 
-<Router>
-  <Route path="/income" component={IncomeForm} />
-
-  <div class="sidebar">
-    <!-- class:open={isOpen} -->
-    <div class="sidebar-header">
-      <h3>Expense Manager</h3>
-    </div>
-
-    <Link to="/">Home</Link>
-    <Link to="/income">About</Link>
-    <Link to="/expense">Blog</Link>
-    <ul>
-      <li><a href="/categories">Expenses</a></li>
-      <li><a href="../Income_Page/IncomeForm.svelte">Income</a></li>
-    </ul>
-    <div>
-      <Route path="/expense" component={ExpenseForm} />
-      <Route path="/income" component={IncomeForm} />
-    </div>
+<div class="sidebar">
+  <!-- class:open={isOpen} -->
+  <div class="sidebar-header">
+    <h3>Expense Manager LOGO</h3>
   </div>
-</Router>
+
+  <ul>
+    <li>Home</li>
+    <li><a href="/categories">Expenses</a></li>
+    <li><a href="../Income_Page/IncomeForm.svelte">Income</a></li>
+  </ul>
+</div>
 
 <style>
   .sidebar {
     width: 250px;
     height: 100%;
-    background-color: red;
+    background-color: #333;
     color: #fff;
     position: fixed;
     top: 0;
@@ -49,18 +39,18 @@
   }
 
   /* ul {
-      list-style-type: none;
-      padding: 0;
-      font-size: 1.2rem;
-    }
-  
-    li {
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-  
-    a {
-      text-decoration: none;
-      color: #fff;
-    } */
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+
+  li {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  } */
 </style>

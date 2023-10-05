@@ -2,7 +2,7 @@
 </script>
 
 <div class="cat_div">
-  <p id="amount_p">₹4389</p>
+  <p id="amount_p">₹34000</p>
   <p id="cate_p">RENT</p>
 </div>
 
