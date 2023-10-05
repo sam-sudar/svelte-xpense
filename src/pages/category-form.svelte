@@ -4,25 +4,22 @@
 
   let category = "";
   let budget = 0;
-  let categories = [{ name: "food", maxBudget: 4000 }]; // Array to store category objects
+  let categories = [{ name: "food", maxBudget: 4000 }];
 
   function handleCategoryFormSubmit(event) {
     event.preventDefault();
 
     if (category && budget > 0) {
-      // Create a category object and add it to the categories array
       categories = [
         {
           name: category,
           maxBudget: budget,
         },
-        ...categories, // Add existing categories to the array
+        ...categories,
       ];
 
-      // Update the store with the new categories
       categoriesStore.set(categories);
 
-      // Clear the form fields
       category = "";
       budget = 0;
     }

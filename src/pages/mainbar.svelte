@@ -7,7 +7,7 @@
   <h1>Earnings</h1>
   <div id="account_div">
     <p>My Balance</p>
-    <p id="amount_p">₹ 1212</p>
+    <p id="amount_p">₹ 33400</p>
   </div>
   <div id="cate_div">
     <CategoryBox />

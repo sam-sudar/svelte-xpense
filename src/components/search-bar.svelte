@@ -1,16 +1,15 @@
 <script>
-  let searchTerm = "";
+  let searchVal = "";
 
   function handleSearch() {
-    // Implement your search logic here
-    console.log("Search term:", searchTerm);
+    console.log("Search term:", searchVal);
   }
 </script>
 
 <div class="search-bar">
   <input
     type="text"
-    bind:value={searchTerm}
+    bind:value={searchVal}
     placeholder="Search..."
     on:input={handleSearch}
   />

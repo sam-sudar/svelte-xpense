@@ -2,12 +2,14 @@
   import Endbar from "./components/endbar.svelte";
   import MainBar from "./pages/mainbar.svelte";
   import SideBar from "./components/sidebar.svelte";
+  import ExpenseForm from "./pages/expense-form.svelte";
 </script>
 
 <div class="app">
   <SideBar />
   <MainBar />
   <Endbar />
+  <ExpenseForm />
 </div>
 
 <style>

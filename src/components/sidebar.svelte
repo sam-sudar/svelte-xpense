@@ -5,7 +5,6 @@
 </script>
 
 <div class="sidebar">
-  <!-- class:open={isOpen} -->
   <div class="sidebar-header">
     <h3>Expense Manager LOGO</h3>
   </div>

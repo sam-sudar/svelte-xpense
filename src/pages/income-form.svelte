@@ -6,10 +6,10 @@
   let isTicked = false;
   let nextIncomeDate = null;
 
-  const incomeFrequencyOptions = ["Weekly", "Bi-Weekly", "Monthly", "Yearly"];
-  let incomes = []; // Array to store income objects
+  const incomeFrequencyOptions = ["Weekly", "Monthly", "Yearly"];
+  let incomes = [];
 
-  function handleIncomeFrequencyChange(event) {
+  function handleIncomeEvent(event) {
     incomeFrequency = event.target.value;
     calculateNextIncomeDate();
   }
@@ -20,8 +20,6 @@
 
       if (incomeFrequency === "Weekly") {
         currentDate.setDate(currentDate.getDate() + 7);
-      } else if (incomeFrequency === "Bi-Weekly") {
-        currentDate.setDate(currentDate.getDate() + 14);
       } else if (incomeFrequency === "Monthly") {
         currentDate.setMonth(currentDate.getMonth() + 1);
       } else if (incomeFrequency === "Yearly") {
@@ -35,27 +33,24 @@
   }
 
   function handleFormSubmit(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
 
     if (incomeAmount && incomeSource && incomeDate) {
-      // Create an income object and add it to the incomes array
       incomes = [
         {
           amount: incomeAmount,
           source: incomeSource,
           date: incomeDate,
         },
-        ...incomes, // Add existing incomes to the array
+        ...incomes,
       ];
 
-      // Clear the form fields
       incomeAmount = 0;
       incomeSource = "";
       incomeDate = "";
       incomeFrequency = "";
       isTicked = false;
 
-      // Recalculate the next income date
       calculateNextIncomeDate();
     }
   }
@@ -74,7 +69,7 @@
   <select
     id="income-frequency"
     bind:value={incomeFrequency}
-    on:change={handleIncomeFrequencyChange}
+    on:change={handleIncomeEvent}
   >
     {#each incomeFrequencyOptions as option}
       <option value={option}>{option}</option>
