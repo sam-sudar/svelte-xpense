@@ -1,0 +1,73 @@
+sending data to parent
+import { createEventDispatcher } from "svelte";
+
+// Create an event dispatcher
+  const dispatch = createEventDispatcher();
+
+  function sendDataToParent() {
+    dispatch("customEventName", { message: incomeAmount });
+  }
+
+
+//explain this shared state method in detail and how svelte can be advantageous using it
+ChatGPT
+In Svelte, you can manage shared state using stores, which are a powerful feature for handling application-wide or component communication. The primary benefit of using shared state with Svelte is that it simplifies state management and makes it more predictable. Here's how it works:
+
+Store Creation:
+
+Svelte provides several types of stores, including writable, readable, and derived. The most commonly used store is writable. You can create a store by importing writable and initializing it with an initial value:
+
+svelte
+Copy code
+import { writable } from 'svelte/store';
+
+const sharedState = writable(initialValue);
+The initialValue is the initial state of the store.
+
+Accessing Shared State:
+
+Any component in your Svelte application can import the shared state store and access its value:
+
+svelte
+Copy code
+import { sharedState } from './sharedState.js';
+
+$: value = $sharedState; // Access the value of the store
+In this example, the value variable will always reflect the current value of the sharedState store.
+
+Updating Shared State:
+
+To update the shared state, you can simply set the store's value using the $sharedState syntax:
+
+svelte
+Copy code
+$sharedState = newValue; // Update the shared state
+This will trigger reactivity in all components that are using the shared state. When the value changes, Svelte will automatically update the UI in all relevant components.
+
+Now, let's discuss the advantages of using shared state in Svelte:
+
+Predictable State Management:
+
+Shared state stores make it easy to manage state in a predictable and declarative way. You explicitly define the state and how it can change, which reduces the chances of state-related bugs.
+
+Reactivity:
+
+Svelte provides a reactivity system that efficiently updates the DOM when shared state changes. Components react to state changes without the need for explicit event handling or manual updates to the DOM.
+
+Centralized State:
+
+Shared state stores allow you to centralize state management, making it accessible across components. This is particularly useful for maintaining consistent data between different parts of your application.
+
+Easier Communication:
+
+When different components need to communicate or synchronize their state, shared state stores act as a communication bridge. Components can read and write to the same store, facilitating communication and coordination.
+
+Avoiding Prop Drilling:
+
+In large applications with deeply nested component trees, prop drilling (passing data down multiple levels of components) can become unwieldy. Shared state stores eliminate the need for excessive prop passing.
+
+Performance Optimization:
+
+Svelte optimizes reactivity, reducing unnecessary updates and improving the overall performance of your application.
+
+Using shared state in Svelte provides a clean and efficient way to manage state in your application, facilitating communication and reactivity while reducing the complexity of state management compared to other state management solutions like Redux or Mobx.

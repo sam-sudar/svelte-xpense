@@ -1,9 +1,10 @@
 <script>
+  export let catName, catLimit;
 </script>
 
 <div class="cat_div">
-  <p id="amount_p">₹34000</p>
-  <p id="cate_p">RENT</p>
+  <p id="amount_p">₹{catLimit}</p>
+  <p id="cate_p">{catName}</p>
 </div>
 
 <style>
@@ -12,7 +13,7 @@
     width: 160px;
     border-radius: 25px;
     margin-left: 10px;
-    background-color: salmon;
+    background-color: #fff;
   }
   p {
     margin: 10px;

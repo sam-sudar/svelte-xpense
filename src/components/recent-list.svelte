@@ -1,29 +1,29 @@
 <script>
-  let items = [
-    { id: 1, sub: "Item 1", desc: "Place", money: 400, time: "11:00" },
-    { id: 2, sub: "Item 2", desc: "Place", money: 400, time: "11:00" },
-    { id: 3, sub: "Item 3", desc: "Place", money: 400, time: "11:00" },
-    { id: 4, sub: "Item 4", desc: "Place", money: 400, time: "11:00" },
-    { id: 5, sub: "Item 5", desc: "Place", money: 400, time: "11:00" },
-    { id: 6, sub: "Item 6", desc: "Place", money: 400, time: "11:00" },
-    { id: 7, sub: "Item 7", desc: "Place", money: 400, time: "11:00" },
-    { id: 8, sub: "Item 8", desc: "Place", money: 400, time: "11:00" },
-    { id: 9, sub: "Item 9", desc: "Place", money: 400, time: "11:00" },
-    { id: 10, sub: "Item 10", desc: "Place", money: 400, time: "11:00" },
-  ];
+  export let expenseMessage;
+  const currentDate = new Date().getDate();
+  const month = new Date().getMonth() + 1;
+  // let items = [
+  //   {
+  //     id: 1,
+  //     sub: "Item 1",
+  //     desc: expenseMessage.expName,
+  //     money: expenseMessage.expAmount,
+  //     time: currentDate.getUTCDate(),
+  //   },
+  // ];
 </script>
 
 <div class="scrollable-list">
   <div class="scrollable-content">
-    {#each items as item (item.id)}
+    {#each expenseMessage as expense}
       <div class="item">
         <div id="itemleft_div">
-          <p id="itemsub_p">{item.sub}</p>
-          <p>{item.desc}</p>
+          <p id="itemsub_p">{expense.name}</p>
+          <p>{expense.category}</p>
         </div>
         <div id="itemright_div">
-          <p style="font-weight: bold;">₹{item.money}</p>
-          <p>{item.time}</p>
+          <p style="font-weight: bold;">₹{expense.amount}</p>
+          <p>{currentDate}-{month}</p>
         </div>
       </div>
     {/each}
@@ -54,14 +54,16 @@
   #itemleft_div {
     width: 50%;
     height: 100%;
-    background-color: yellow;
+    background-color: #66fcf1;
+    color: #0b0c10;
     text-align: left;
     padding: 0px 20px;
   }
   #itemright_div {
     width: 50%;
     height: 100%;
-    background-color: lightseagreen;
+    background-color: #0b0c10;
+    color: #66fcf1;
     text-align: right;
     padding: 0px 20px;
   }

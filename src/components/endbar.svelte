@@ -29,7 +29,7 @@
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    background-color: black;
+    background-color: #0b0c10;
     height: 100%;
     width: 28%;
   }
@@ -41,7 +41,7 @@
     align-items: center;
     width: 90%;
     height: 45%;
-    background-color: #fff;
+    background-color: #c5c6c7;
     margin: 15px 0px 15px;
     border-radius: 23px;
     padding-top: 15px;
@@ -50,7 +50,8 @@
     display: flex;
     width: 90%;
     height: 47%;
-    background-color: crimson;
+    margin-top: 10px;
+    border-radius: 10px;
     align-items: center;
     justify-content: center;
   }
@@ -58,7 +59,8 @@
     height: 89%;
     width: 44%;
     margin: 5px;
-    background-color: chartreuse;
+    background-color: #45a29e;
+    border-radius: 10px;
   }
   p {
     margin: 8px 0;
@@ -72,8 +74,8 @@
   /* Goals */
   .goals_div {
     width: 90%;
-    height: 45%;
-    background-color: #fff;
+    height: 43%;
+    background-color: #c5c6c7;
     margin-top: 15px;
     border-radius: 23px;
   }
